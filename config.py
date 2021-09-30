@@ -1,0 +1,26 @@
+conf = {
+    "WORK_PATH": "/mnt/cpfs/users/gpuwork/xianda.guo/work",
+    "CUDA_VISIBLE_DEVICES": "0,1,2,3,4,5,6,7",
+    "data": {
+        # 'dataset_path': "/mnt/cpfs/users/gpuwork/xianda.guo/data/OUMVLP/OUMVLP_orl_regular64",
+        # 'dataset_path': "/mnt/cpfs/users/gpuwork/xianda.guo/data/grew_data/iccv2021/train_final",
+        'dataset_path': "/mnt/cfs/algorithm/users/xianda.guo/data/grew_data/iccv2021/train",
+        # 'dataset_path': "/mnt/cfs/algorithm/users/xianda.guo/data/OUMVLP/OUMVLP_orl_regular64",
+        'resolution': '64',
+        'dataset': 'mvlp',
+        'pid_num': 5153,
+        'pid_shuffle': False,
+    },
+    "model": {
+        'hidden_dim': 256,
+        'lr': 1e-4,
+        'hard_or_full_trip': 'full',
+        'batch_size': (64, 4),
+        'restore_iter': 0,
+        'total_iter': 250000,
+        'margin': 0.2,
+        'num_workers': 32,
+        'frame_num': 30,
+        'model_name': 'GaitSet_mvlp_master_grew',
+    },
+}
