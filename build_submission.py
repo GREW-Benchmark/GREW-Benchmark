@@ -3,6 +3,7 @@ import os
 import os.path as osp
 import random
 
+import argparse
 import cv2
 import math
 import numpy as np
@@ -400,7 +401,8 @@ def ts2var(x):
 def np2var(x):
     return ts2var(torch.from_numpy(x))
 
-def extract_test_gallery(test_source, net):
+def extract_test_gallery(test_source, net, gallery_feature_path='./gallery_feature.npy',
+                         labelnp_path='./labelnp_l2_48.npy'):
     print('----extract_test_gallery-----')
 
     data_loader = tordata.DataLoader(
@@ -438,16 +440,15 @@ def extract_test_gallery(test_source, net):
     gallery_feature = np.concatenate(feature_list, 0)
 
     print('GL gallerynp shape = ', gallery_feature.shape)
-    np.save("/mnt/cfs/algorithm/users/xianda.guo/data/grew_data/iccv2021/tmp/gallery_feature.npy", gallery_feature)
+    np.save(gallery_feature_path, gallery_feature)
 
     labelnp = np.array(label)
     print('GL labelnp shape = ', labelnp.shape)
-    np.save("/mnt/cfs/algorithm/users/xianda.guo/data/grew_data/iccv2021/tmp/labelnp_l2_48.npy", labelnp)
-    # print(feature.shape)
+    np.save(labelnp_path, labelnp)
     return label_list, gallery_feature
 
 
-def extract_test_probe(test_source, net):
+def extract_test_probe(test_source, net,probe_feature_path = './gallery_feature.npy'):
     print('----extract_test_probe-----')
 
     data_loader = tordata.DataLoader(
@@ -478,13 +479,11 @@ def extract_test_probe(test_source, net):
 
             if i%100==0:
                 print('-->extract_probe:{}'.format(i))
-                # print('input', seq.size())
-                # print('outputs', outputs.size())
     # feature = torch.cat(feature_list,0)
     probe_feature = np.concatenate(feature_list, 0)
 
     print('GL gallerynp shape = ', probe_feature.shape)
-    np.save("/mnt/cfs/algorithm/users/xianda.guo/data/grew_data/iccv2021/tmp/gallery_feature.npy", probe_feature)
+    np.save(probe_feature_path, probe_feature)
 
     return probe_feature,seq_type_list
 
@@ -513,9 +512,9 @@ def build_submission_csv(submission_path, model_path,gallery_path, probe_path,pr
     print('finish reading csv!')
 
     # build model
-    net = SetNet()
+    net = SetNet(hidden_dim=256)
     net = nn.DataParallel(net).cuda()
-    net.load_state_dict(torch.load(modelpath))
+    net.load_state_dict(torch.load(model_path))
 
     # 2. prepare gallery
     # work_path = '/mnt/cfs/algorithm/users/xianda.guo/work/'
@@ -546,7 +545,7 @@ def build_submission_csv(submission_path, model_path,gallery_path, probe_path,pr
             listcsv[i][0] = vidId
             listcsv[i][j + 1] = int(label[_idx])
 
-    with open(prepare_to_submit_path, 'w', newline='') as csvfile:
+    with open(prepare_to_submit_csv_path, 'w', newline='') as csvfile:
             writer = csv.writer(csvfile)
             for row in listcsv:
                 writer.writerow(row)
@@ -567,4 +566,5 @@ if __name__ == "__main__":
                         default='submit/submission.csv')
 
     opt = parser.parse_args()
-    build_submission_csv(submission_path, model_path,gallery_path, probe_path,prepare_to_submit_csv_path)
+    build_submission_csv(opt.submission_path, opt.model_path,opt.gallery_path,
+                         opt.probe_path,opt.prepare_to_submit_csv_path)
