@@ -7,7 +7,7 @@ conf = {
         'dataset_path': "/mnt/cfs/algorithm/users/xianda.guo/data/grew_data/iccv2021/train",
         # 'dataset_path': "/mnt/cfs/algorithm/users/xianda.guo/data/OUMVLP/OUMVLP_orl_regular64",
         'resolution': '64',
-        'dataset': 'mvlp',
+        'dataset': 'GREW',
         'pid_num': 5153,
         'pid_shuffle': False,
     },
