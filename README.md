@@ -73,11 +73,11 @@ The Silhouettes and Gait Energy Images (GEIs) has been resized to 64*64. And 2D 
 
 The header of *_2d_pose.txt is as follows:
 ```
-orl_image_w,orl_image_h,nose_x,nose_y,nose_conf,left_eye_x,left_eye_y,left_eye_conf,right_eye_x,right_eye_y,right_eye_conf,left_ear_x,left_ear_y,left_ear_conf,right_ear_x,right_ear_y,right_ear_conf,left_shoulder_x,left_shoulder_y,left_shoulder_conf,right_shoulder_x,right_shoulder_y,right_shoulder_conf,left_elbow_x,left_elbow_y,left_elbow_conf,right_elbow_x,right_elbow_y,right_elbow_conf,left_wrist_x,left_wrist_y,left_wrist_conf,right_wrist_x,right_wrist_y,right_wrist_conf,left_hip_x,left_hip_y,left_hip_conf,right_hip_x,right_hip_y,right_hip_conf,left_knee_x,left_knee_y,left_knee_conf,right_knee_x,right_knee_y,right_knee_conf,left_ankle_x,left_ankle_y,left_ankle_conf,right_ankle_x,right_ankle_y,right_ankle_conf
+orl_image_h,orl_image_w,nose_x,nose_y,nose_conf,left_eye_x,left_eye_y,left_eye_conf,right_eye_x,right_eye_y,right_eye_conf,left_ear_x,left_ear_y,left_ear_conf,right_ear_x,right_ear_y,right_ear_conf,left_shoulder_x,left_shoulder_y,left_shoulder_conf,right_shoulder_x,right_shoulder_y,right_shoulder_conf,left_elbow_x,left_elbow_y,left_elbow_conf,right_elbow_x,right_elbow_y,right_elbow_conf,left_wrist_x,left_wrist_y,left_wrist_conf,right_wrist_x,right_wrist_y,right_wrist_conf,left_hip_x,left_hip_y,left_hip_conf,right_hip_x,right_hip_y,right_hip_conf,left_knee_x,left_knee_y,left_knee_conf,right_knee_x,right_knee_y,right_knee_conf,left_ankle_x,left_ankle_y,left_ankle_conf,right_ankle_x,right_ankle_y,right_ankle_conf
 ```
 The header of *_3d_pose.txt is as follows:
 ```
-orl_image_w,orl_image_h,head_x,head_y,head_z,chin_x,chin_y,chin_z,right_shoulder_x,right_shoulder_y,right_shoulder_z,right_elbow_x,right_elbow_y,right_elbow_z,right_wrist_x,right_wrist_y,right_wrist_z,left_shoulder_x,left_shoulder_y,left_shoulder_z,left_elbow_x,left_elbow_y,left_elbow_z,left_wrist_x,left_wrist_y,left_wrist_z,right_hip_x,right_hip_y,right_hip_z,right_knee_x,right_knee_y,right_knee_z,right_ankle_x,right_ankle_y,right_ankle_z,left_hip_x,left_hip_y,left_hip_z,left_knee_x,left_knee_y,left_knee_z,left_ankle_x,left_ankle_y,left_ankle_z
+orl_image_h,orl_image_w,head_x,head_y,head_z,chin_x,chin_y,chin_z,right_shoulder_x,right_shoulder_y,right_shoulder_z,right_elbow_x,right_elbow_y,right_elbow_z,right_wrist_x,right_wrist_y,right_wrist_z,left_shoulder_x,left_shoulder_y,left_shoulder_z,left_elbow_x,left_elbow_y,left_elbow_z,left_wrist_x,left_wrist_y,left_wrist_z,right_hip_x,right_hip_y,right_hip_z,right_knee_x,right_knee_y,right_knee_z,right_ankle_x,right_ankle_y,right_ankle_z,left_hip_x,left_hip_y,left_hip_z,left_knee_x,left_knee_y,left_knee_z,left_ankle_x,left_ankle_y,left_ankle_z
 ```
 
 ## Requirements
