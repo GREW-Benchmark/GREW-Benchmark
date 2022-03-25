@@ -116,7 +116,7 @@ even they have been used in the former iterations. #Default: TRUE
 ```bash
 python build_submission.py
 ```
-Participants must package the submission.csv for submission using zip xxx.zip $CSV_PATH and then upload it to [codalab](https://competitions.codalab.org/competitions/35463).
+Participants must package the submission.csv for submission using zip xxx.zip $CSV_PATH and then upload it to [codalab](https://codalab.lisn.upsaclay.fr/competitions/3409).
 
 
 ## Acknowledgements
